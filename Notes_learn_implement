@@ -1,0 +1,149 @@
+🧠 PART 1: What is an API? (Super Simple Explanation)
+✔ API = A messenger
+
+API means Application Programming Interface.
+
+Think of an API as a waiter in a hotel:
+
+You → give a request (order food)
+
+Waiter → goes to kitchen (server)
+
+Kitchen → prepares food (data)
+
+Waiter → brings food back to you
+
+Similarly:
+
+Your Python program → sends a request to API
+
+API → finds the data (weather)
+
+API → sends it back as JSON (a format like a dictionary)
+
+🧠 PART 2: What is a Weather API?
+
+OpenWeatherMap is a website that stores real-time weather data.
+
+When you send:
+
+Give me the weather of Chennai
+
+
+They respond with a JSON (data format) like:
+
+{
+  "name": "Chennai",
+  "main": {
+    "temp": 31.5,
+    "humidity": 74
+  },
+  "weather": [
+    {"description": "clear sky"}
+  ],
+  "wind": {
+    "speed": 3.1
+  }
+}
+
+
+Your Python program reads this and prints:
+
+Temperature: 31.5°C
+Humidity: 74%
+Condition: clear sky
+
+
+That’s all!
+
+🧠 PART 3: What is an API KEY?
+
+Every person using OpenWeatherMap must have a unique key.
+
+Example of an API key:
+
+fd430b7afa94f1d0c0283b90168c65c1
+
+
+This key is like a password / token that tells OpenWeather:
+
+“This request is from Surya.”
+
+Without the key → They won’t give weather data.
+
+🧠 PART 4: How your Python code uses the API
+
+Your project sends a request like this:
+
+https://api.openweathermap.org/data/2.5/weather?q=Chennai&appid=YOUR_API_KEY&units=metric
+
+
+Parts:
+
+q=Chennai → City
+
+appid=YOUR_API_KEY → Your unique key
+
+units=metric → Temperature in °C
+
+Your Python code uses the requests library to call this URL.
+
+🧠 PART 5: Step-by-Step — What your program does
+Step 1 → Ask you: “Enter city name”
+
+Example:
+
+Chennai
+
+Step 2 → Ask you: “Enter API key”
+
+Example:
+
+xxxxxxxxxxxxxxxxxxxx
+
+Step 3 → Program creates a URL:
+https://api.openweathermap.org/data/2.5/weather?q=Chennai&appid=xxxxxxxxx&units=metric
+
+Step 4 → Python sends the request to internet
+
+The API sends back JSON data.
+
+Step 5 → Program prints the results:
+Weather report for: Chennai
+Temperature: 30°C
+Condition: clear sky
+Wind: 3.1 m/s
+
+🧠 PART 6: How you run it (FULL STEPS)
+STEP 1 — Install Python (if not installed)
+STEP 2 — Install "requests"
+pip install requests
+
+STEP 3 — Save the script as Project2.py
+STEP 4 — Get an API KEY from OpenWeather
+
+Free account → free key.
+
+Website:
+https://home.openweathermap.org/users/sign_up
+
+After sign-up → You get a key in your dashboard.
+
+STEP 5 — Run the app
+python Project2.py
+
+
+It will ask:
+
+Enter city name:
+
+
+Then:
+
+Enter your OpenWeatherMap API key:
+
+
+Done ✔
+
+🧠 PART 7: Visual understanding (Easy Diagram)
+YOU (Surya) → Python Program → Weather API → Weather Data → Printed on Screen
